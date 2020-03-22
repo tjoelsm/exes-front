@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../core/login/login.service';
+import { LoginService } from '../../../core/login/login.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import {FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-usuario',
+  templateUrl: './usuario.component.html',
+  styleUrls: ['./usuario.component.css']
 })
-export class AppComponent {
-  title = 'Gestion de Gastos Futuros';
+export class UsuarioComponent implements OnInit {
 
+ 
   loginForm: FormGroup
   private subscription: Subscription; 
 
@@ -32,4 +32,5 @@ export class AppComponent {
     console.log("##### EMAIL ######", this.loginForm.value.email);
     let auth = this.login.checkEmail(this.loginForm.value.email,this.loginForm.value.password);
   }
+
 }

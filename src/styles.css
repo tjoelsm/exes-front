@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+    min-width: 630px;
+    margin: 0;
+		padding: 0;
+		font-family:Sans-serif;
+		line-height: 1.5em;
+  }
+  body, input[type="text"], button {
+    color: #888;
+    font-family: Cambria, Georgia;
+  }
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+
+  #container {
+    padding-left: 200px;
+    padding-right: 190px;
+  }
+  
+  #container .column {
+    position: relative;
+    float: left;
+  }
+  
+  #center {
+    padding: 10px 20px;
+    width: 95%;
+  }
+  
+  #left {
+    width: 180px;
+    padding: 0 10px;
+    right: 240px;
+    margin-left: -95%;
+  }
+  
+  #right {
+    width: 180px;
+    padding: 0 5px;
+    margin-right: -95%;
+  }
+  
+  #footer {
+    width: 100%;
+    margin-top: 10px;
+    clear: both;
+  }
+  
+  /* IE hack */
+  * html #left {
+    left: 150px;
+  }
+
+  /* Make the columns the same height as each other */
+  #container {
+    overflow: hidden;
+  }
+
+  #container .column {
+    padding-bottom: 1001em;
+    margin-bottom: -1000em;
+  }
+
+  /* Fix for the footer */
+  * html body {
+    overflow: hidden;
+  }
+  
+  * html #footer-wrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100 10px;
+    margin-bottom: 100 10px;
+    background: #fff;
+  }
+
+
+  p {
+    color: #555;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul a {
+    color: darkgreen;
+    text-decoration: none;
+  }
+
+  #header, #footer {
+    font-size: large;
+    text-align: center;
+    padding: 0.3em;
+    background: #BCCE98;
+  }
+
+  #left {
+    background: #DAE9BC;
+  }
+  
+  #right {
+    background: #F7FDEB;
+  }
+
+  #center {
+    background: #fff;
+  }
+
+  #container .column {
+    padding-top: 1em;
+  }
