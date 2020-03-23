@@ -1,3 +1,4 @@
 {
-    "back_login":"http://localhost:8080/personas/"
+    "back": "http://localhost:8080",
+    "enabled_security": false
 }

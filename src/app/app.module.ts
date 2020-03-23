@@ -1,12 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './views/usuario/usuario.component';
-import {ConfigService} from '../config/config.service'
-import {LoginService} from '../core/login/login.service';
+import {ConfigService} from '../app/config/config.service'
+import {LoginService} from '../app/core/login/login.service';
+
+const appInt = (config: ConfigService) => {
+  return () =>{
+    return config.load('config.json');
+  }
+}
 
 @NgModule({
   declarations: [
@@ -20,7 +26,14 @@ import {LoginService} from '../core/login/login.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ConfigService, LoginService],
+  providers: [
+    ConfigService, {
+      provide: APP_INITIALIZER,
+      useFactory: appInt,
+      multi: true,
+      deps: [ConfigService]
+    },
+    LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
